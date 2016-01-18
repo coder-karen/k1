@@ -1,0 +1,25 @@
+/*************************************
+Theme Name: K1
+Theme URI:
+Description: Bespoke simple blog theme
+Version: 1.0 
+Author: Karen Attfield
+Author URI: 
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: One-Column, Responsive-Layout, Threaded-Comments, Custom-Menu
+*******************************************/
+
+
+
+
+
+@import url("css/styles.css");
+@import url("css/bootstrap.css");
+@import url("css/bootstrap.css.map");
+@import url("css/bootstrap.min");
+@import url("css/bootstrap.min.css.map");
+@import url("css/bootstrap-theme.css");
+@import url("css/bootstrap-theme.css.map");
+@import url("css/bootstrap-theme.min");
+@import url("css/bootstrap-theme.min.css.map");
