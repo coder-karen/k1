@@ -20,6 +20,7 @@
 	
 	<link rel="stylesheet/less" href="css/styles.less" type="text/css" />
 	<link rel="stylesheet/less" type="text/css" href="styles.less">
+<script src="js/jquery-1.11.3.min.js"></script>
 <script src="less.js" type="text/javascript"></script>
 <script type="text/javascript">
   less.watch();

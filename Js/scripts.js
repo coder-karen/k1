@@ -6,5 +6,5 @@ jQuery(document).ready(function() {
 		jQuery('.rwd-main-nav').slideToggle();
 	});
 
-	jQuery('.video-container').fitVids();
+
 });
