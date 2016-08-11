@@ -12,7 +12,7 @@ License: 	GNU General Public License v3.0
 
 == DESCRIPTION ==
 
-K1 was built to have a simple design on a white background. It is responsive and blog-focused, with two widget areas on the main page as well as three in the footer. The top banner image, text and link can be customised via the theme customizer, as can the front page ‘About Our Work’ section. 
+K1 was built to have a simple design on a white background. It is responsive and blog-focused, with two widget areas on the main page as well as three in the footer. The top banner image, text and link can be customised via the theme customizer, as can the front page ‘About Our Work’ section. You can view a live demo here: http://k1demo.byethost6.com/
 
 
 
