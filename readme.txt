@@ -46,8 +46,3 @@ This theme is built with all the necessary WordPress components included with it
 
 If you install a plugin and encounter issues after trying it, ask the plugin author for support first. If the plugin author says that itâ€™s a problems with the theme, please contact the theme author via github: https://github.com/coder-karen
 
-
-== SHORTCODES ==
-
-To add a green or gray button to your pages/posts, simply add the following shortcode:
-[button color="gray" link="http://yourlinkhere.com"]Your button text here[/button]
