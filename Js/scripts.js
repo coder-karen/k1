@@ -1,9 +1,9 @@
 jQuery(document).ready(function() {
-	jQuery('.main-navigation ul:first-child').clone().appendTo('.rwd-main-nav');
 
-	jQuery('#rwd-main-nav-btn').click(function(event) {
+	jQuery('#responsive-menu-icon').click(function(event) {
 		event.preventDefault();
-		jQuery('.rwd-main-nav').slideToggle();
+		console.log("working");
+		jQuery('.responsive-navigation ul li').slideToggle();
 	});
 
 
