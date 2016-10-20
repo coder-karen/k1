@@ -7,6 +7,7 @@ define('THEMEROOT', get_stylesheet_directory_uri());
 define('IMAGES', THEMEROOT.'/images');
 
 
+
 /***********************************************************************************************/
 /* Load JS Files */
 /***********************************************************************************************/
@@ -15,22 +16,6 @@ function load_custom_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'load_custom_scripts');
-
-
-
-/***********************************************************************************************/
-/* Localization Support */
-/***********************************************************************************************/
-function custom_theme_localization() {
-	$lang_dir = THEMEROOT . '/lang';
-	
-	load_theme_textdomain('k1-framework', $lang_dir);
-}
-
-add_action('after_theme_setup', 'custom_theme_localization');
-	
-
-
 
 
 
@@ -78,17 +63,13 @@ add_action('init', 'register_my_menus');
 /* Add Sidebar and Widgetized Area Support */
 /***********************************************************************************************/
 if (function_exists('register_sidebar')) {
-
-	add_action( 'widgets_init', 'k1_slug_widgets_init' );
-	function k1_slug_widgets_init() {
-
 	register_sidebar(
 		array(
 			'name' => __('Left Homepage Widget', 'k1-framework'),
 			'id' => 'left-homepage',
 			'description' => __('The left homepage widget area', 'k1-framework'),
-			'before_widget' => '<div class="col-lg-6 widget"><div class="inner-widget">',
-			'after_widget' => '</div></div> <!-- end left hompeage widget -->',
+			'before_widget' => '<div class="col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-1 widget">',
+			'after_widget' => '</div> <!-- end left homepage widget -->',
 			'before_title' => '<h2>',
 			'after_title' => '</h2>'
 		)
@@ -98,8 +79,8 @@ if (function_exists('register_sidebar')) {
 			'name' => __('Right Homepage Widget', 'k1-framework'),
 			'id' => 'right-homepage',
 			'description' => __('The right homepage widget area', 'k1-framework'),
-			'before_widget' => '<div class="col-lg-6 widget"><div class="inner-widget">',
-			'after_widget' => '</div></div> <!-- end right hompeage widget -->',
+			'before_widget' => '<div class="col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-2 widget">',
+			'after_widget' => '</div> <!-- end right homepage widget -->',
 			'before_title' => '<h2>',
 			'after_title' => '</h2>'
 		)
@@ -115,8 +96,6 @@ if (function_exists('register_sidebar')) {
 			'after_title' => '</h5>'
 		)
 	);
-
-}
 
 }
 	
@@ -154,7 +133,7 @@ function k1_comments($comment, $args, $depth) {
 			
 				<header>
 				
-					<h4><span><?php _e('AUTHOR: ', 'k1-framework'); ?></span><?php comment_author_link(); ?></h4>
+					<h4><span><?php _e('AUTHOR', 'k1-framework'); ?></span><?php comment_author_link(); ?></h4>
 					<p><span>on <?php comment_date(); ?> at <?php comment_time(); ?> - </span><?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?></p>
 					
 				</header>
@@ -187,14 +166,14 @@ function k1_comments($comment, $args, $depth) {
 
 
 /***********************************************************************************************/
-/* Custom Comments Form */
+/* Custom Comment Form */
 /***********************************************************************************************/
 function k1_custom_comment_form($defaults) {
 	$comment_notes_after = '' .
 		'<div class="allowed-tags">' .
 		'<p><strong>' . __('Allowed Tags', 'k1-framework') . '</strong></p>' .
 		'<code> ' . allowed_tags() . ' </code>' .
-		'</div> <!-- end allowed-tags --> <br/>';
+		'</div> <!-- end allowed-tags -->';
 	
 	$defaults['comment_notes_before'] = '';
 	$defaults['comment_notes_after'] = $comment_notes_after;
@@ -231,75 +210,13 @@ function k1_custom_comment_fields() {
 
 add_filter('comment_form_default_fields', 'k1_custom_comment_fields');
 
-/*********************************************************************/
-/* Enqueue comment-reply script */
-/*********************************************************************/
-
-function newborn_enqueue_comments_reply() {
-if( get_option( 'thread_comments' ) ) {
-wp_enqueue_script( 'comment-reply' );
-}
-}
-add_action( 'comment_form_before', 'newborn_enqueue_comments_reply' );
-
-
-/***********************************************************************************************/
-/* Adding theme support */
-/***********************************************************************************************/
-
-add_theme_support( 'title-tag' );
-
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
-	function theme_slug_render_title() {
-?>
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<?php
-	}
-	add_action( 'wp_head', 'theme_slug_render_title' );
-}
-
-
-/***********************************************************************************************/
-/* Title tag filter */
-/***********************************************************************************************/
-
-function k1_wp_title( $title, $sep ) {
-	global $paged, $page;
-	if ( is_feed() ) {
-		return $title;
-	} // end if
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title = "$title $sep $site_description";
-	} // end if
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 ) {
-		$title = sprintf( __( 'Page %s', 'k1-framework' ), max( $paged, $page ) ) . " $sep $title";
-	} // end if
-	return $title;
-} // end mayer_wp_title
-add_filter( 'wp_title', 'k1_wp_title', 10, 2 );
-
-
-/***********************************************************************************************/
-/* Add editor style tag functionality */
-/***********************************************************************************************/
-
-
-function k1_add_editor_styles() {
-    add_editor_style( 'custom-editor-style.css' );
-}
-add_action( 'admin_init', 'k1_add_editor_styles' );
 
 /***********************************************************************************************/
 /* Load Theme Options Page and Custom Widgets */
 /***********************************************************************************************/
-
-
 require_once('functions/k1-theme-customizer.php');
-require_once('functions/shortcodes.php');
+	
+	
+
 
 ?>
