@@ -38,7 +38,7 @@
 
 <?php wp_footer(); ?>
 
-	<script src="http://lesscss.googlecode.com/files/less-1.0.30.min.js"></script>
+	
 
 
 </body>
