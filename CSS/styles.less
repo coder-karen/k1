@@ -91,11 +91,11 @@ font-weight: bold;
 
 .gradient (@from, @to) {
 	background-color: @from;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
-	background-image: -webkit-linear-gradient(top, @from, @to);
-	background-image: 	 -moz-linear-gradient(top, @from, @to);
-	background-image: 	   -o-linear-gradient(top, @from, @to);
-	background-image: 		  linear-gradient(to, bottom, @from, @to);
+	background: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+	background: -webkit-linear-gradient(@from, @to);
+	background: 	 -moz-linear-gradient(@from, @to);
+	background: 	   -o-linear-gradient(@from, @to);
+	background: 		  linear-gradient(@from, @to);
 }
 
 .box-shadow(@x: 0, @y: 0, @blur: 1px, @color: #000) {
@@ -124,7 +124,7 @@ font-weight: bold;
 @dark-color: #333333;
 @border-color: #858585;
 @light-text-color: #ccc;
-@text-color: 333;
+@text-color: #333;
 @heading-font: "Abril Fatface", cursive, Georgia, Serif;
 @serif-font: Georgia, serif;
 @body-font: "Lato", Verdana, Helvetica, sans-serif;
@@ -614,7 +614,7 @@ z-index: 10;
 	}
 
 .aligncenter, img.centered {
-	display-role: block;
+	display: block;
 	margin: 1.5em auto;
 	
 }
@@ -971,28 +971,28 @@ form {
 		background: transparent url('../images/social/facebook.png') center center no-repeat;
 		width: 32px;
 		height: 32px;
-		display:: block;
+		display: block;
 	}
 
 	.twitter {
 		background: transparent url('../images/social/twitter.png') center center no-repeat;
 		width: 32px;
 		height: 32px;
-		display:: block;
+		display: block;
 	}
 
 	.linkedin {
 		background: transparent url('../images/social/linkedin.png') center center no-repeat;
 		width: 32px;
 		height: 32px;
-		display:: block;
+		display: block;
 	}
 
 	.youtube {
 		background: transparent url('../images/social/youtube.png') center center no-repeat;
 		width: 32px;
 		height: 32px;
-		display:: block;
+		display: block;
 	}
 
 	
@@ -1045,7 +1045,7 @@ form {
 @media only screen and (max-width: 767px) {
 	
 	.main-navigation {
-		display: hidden;
+		display: none;
 
 		#responsive-menu-icon {
 			display: block;
