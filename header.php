@@ -23,7 +23,8 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-	<script src="js/scripts.js" type="text/javascript"></script>
+	<script src="<?php echo get_template_directory_uri() ?>/js/scripts.js" type="text/javascript"></script>
+
 	
 
 
@@ -69,16 +70,17 @@
 
 	<nav class="main-navigation responsive-navigation clearfix">
 
-			<div id="responsive-menu-icon">
-				<div class="hamburger"></div>
-				<div class="hamburger"></div>
-				<div class="hamburger"></div>
-			Menu </div>
+			
 			<?php wp_nav_menu(array(
 				'theme_location' => 'main-menu'
 			)); ?>
 
 			</nav>
+				<div id="responsive-menu-icon">
+				<div class="hamburger"></div>
+				<div class="hamburger"></div>
+				<div class="hamburger"></div>
+			Menu </div>
 			
 
 
