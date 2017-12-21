@@ -6,7 +6,7 @@ This readme.txt was last updated on: 18 January 2016
 
 Theme URI: 	https://github.com/coder-karen/k1
 Author: Karen Attfield
-Author URI:    karenatt.carbonmade.com
+Author URI:    //karenattfield.com
 Tags: 		white background, gray, one-column, no-sidebar, fixed-width, custom-banner, custom-menu, theme-options, threaded-comments, full-width-template, responsive
 License: 	GNU General Public License v3.0
 
